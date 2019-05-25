@@ -1,3 +1,4 @@
+
 const privateKey = '02ec1db99f659bc2185dd6b5c3aee2fe1e052829',
     publicKey = '3349d5d682ea90858e342c9ae01a771a',
     content = document.getElementById('content'),
@@ -6,7 +7,7 @@ const privateKey = '02ec1db99f659bc2185dd6b5c3aee2fe1e052829',
 const getConnection = () => {
     const ts = Date.now(),
     hash = MD5(ts + privateKey + publicKey),
-    URL = `http://cors-anywhere.herokuapp.com/http://gateway.marvel.com/v1/public/comics?ts=${ts}&apikey=${publicKey}&hash=${hash}`;
+    URL = `http://gateway.marvel.com/v1/public/comics?ts=${ts}&apikey=${publicKey}&hash=${hash}`;
     fetch(URL)
     .then( res => res.json())
     .then( res => {
