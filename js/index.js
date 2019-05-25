@@ -33,7 +33,7 @@ const searchHero = name => {
     const ts = Date.now(),
     hash = MD5(ts + privateKey + publicKey),
     hero = encodeURIComponent(name),
-    URL = `http://cors-anywhere.herokuapp.com/http://gateway.marvel.com/v1/public/characters?name=${hero}&ts=${ts}&apikey=${publicKey}&hash=${hash}`;
+    URL = `http://gateway.marvel.com/v1/public/characters?name=${hero}&ts=${ts}&apikey=${publicKey}&hash=${hash}`;
     fetch(URL)
     .then( res => res.json())
     .then( res => {
